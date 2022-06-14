@@ -9,7 +9,12 @@ class ArticlesController < ApplicationController
       @articles = Article.all
     end
 
-    
+    def delete
+      article = Article.find(params[:id])
+      article.destroy
+
+      redirect_to '/admin/articles/'
+    end
 
     def new
         @article = Article.new
@@ -23,6 +28,7 @@ class ArticlesController < ApplicationController
         @article.body = article_params[:body]
         @article.id = uid
         @article.save!
+        
         redirect_to '/admin/articles/'
     end    
 

@@ -9,4 +9,9 @@ Rails.application.routes.draw do
       get :search
     end
   end
+
+  scope 'admin' do
+    resources :articles, only: %i[new create edit update]
+    get 'index' => 'articles#index_admin'
+  end
 end

@@ -4,14 +4,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :clients do
-    collection do
-      get :search
-    end
-  end
-
   scope 'admin' do
-    resources :articles, only: %i[new create edit update]
-    get 'index' => 'articles#index_admin'
+    resources :articles, only: %i[create new edit update] do
+      collection do
+        root to: 'articles#index_admin'        
+      end
+    end
   end
 end

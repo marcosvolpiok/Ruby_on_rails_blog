@@ -18,12 +18,12 @@ class ArticlesController < ApplicationController
     def create
         uid = SecureRandom.hex(10)
 
-        @client = Article.new
-        @client.title = article_params[:title]
-        @client.body = article_params[:body]
-        @client.id = uid
-        @client.save!
-        redirect_to '/admin/index'
+        @article = Article.new
+        @article.title = article_params[:title]
+        @article.body = article_params[:body]
+        @article.id = uid
+        @article.save!
+        redirect_to '/admin/articles/'
     end    
 
     private

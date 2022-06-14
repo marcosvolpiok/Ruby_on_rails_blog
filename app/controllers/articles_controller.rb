@@ -5,6 +5,12 @@ class ArticlesController < ApplicationController
       @articles = Article.all
     end
 
+    def index_admin
+      @articles = Article.all
+    end
+
+    
+
     def new
         @article = Article.new
     end

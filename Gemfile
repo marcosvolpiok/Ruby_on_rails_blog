@@ -10,8 +10,7 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "sprockets-rails"
 
 gem "pg"
-gem "factory_bot_rails", "~> 6.2"
-gem "rspec-rails", "~> 4"
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -76,4 +75,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  gem "factory_bot_rails", "~> 6.2"
+  gem "rspec-rails", "~> 4"
+  gem "rails-controller-testing"
+  gem "pry"
 end

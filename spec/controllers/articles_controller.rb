@@ -5,6 +5,7 @@ describe ArticlesController, type: :controller do
   # let!(:article)
   # let(:comment) { article }
   let(:params) { {} }
+  let(:params_create) { {article: {title: "Title 2", body: "Body 2"}} }
 
   
 
@@ -26,6 +27,12 @@ describe ArticlesController, type: :controller do
     end
   end
 
+  context "POST create" do
+    it "add article" do
+      get :create, params: params_create
+      expect(Article.count).to be_equal(2)
+    end
+  end
   
 end
 

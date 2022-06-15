@@ -6,8 +6,6 @@ describe ArticlesController, type: :controller do
   let(:params_update) { {article: {title: "Title 3", body: "Body 3"}} }
   let(:params_article_to_be_deleted) { {article: {title: "Title 4", body: "Body 4"}} }
 
-  
-
   before(:each) do |test|
     create(:article)
   end
@@ -55,8 +53,5 @@ describe ArticlesController, type: :controller do
       expect(assigns(:article).title).to be_in(params_create[:article][:title])
     end
   end
-
-  
-  
 end
 

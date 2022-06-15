@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
 
   scope 'admin' do
+    root to: 'articles#index_admin' 
+
     resources :articles, only: %i[create new edit update] do
       collection do
-        root to: 'articles#index_admin' 
         get ':id/delete' => 'articles#delete'
         patch '/' => 'articles#update'
       end

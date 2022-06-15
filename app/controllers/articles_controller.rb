@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
       article = Article.find(params[:id])
       article.destroy
 
-      redirect_to '/admin/articles/'
+      redirect_to '/admin/'
     end
 
     def new
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
         @article.body = article_params[:body]
         @article.save!
 
-        redirect_to '/admin/articles/'
+        redirect_to '/admin/'
     end    
 
     def update

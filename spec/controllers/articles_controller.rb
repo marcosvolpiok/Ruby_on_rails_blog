@@ -24,6 +24,14 @@ describe ArticlesController, type: :controller do
     end
   end
 
+  context "GET show" do
+    it "show article" do
+      get :create, params: params_create
+      get :show, params: { id: Article.first.id }
+      expect(assigns(:article).title).to be_in(params_create[:article][:title])
+    end
+  end  
+
   context "POST create" do
     it "add article" do
       get :create, params: params_create
@@ -43,14 +51,6 @@ describe ArticlesController, type: :controller do
       get :create, params: params_article_to_be_delete
       get :delete, params: {id: Article.last.id}
       expect(Article.where(title: params_article_to_be_delete[:article][:title]).count).to be_equal(0)
-    end
-  end
-
-  context "POST delete" do
-    it "delete article" do
-      get :create, params: params_create
-      get :show, params: { id: Article.first.id }
-      expect(assigns(:article).title).to be_in(params_create[:article][:title])
     end
   end
 end

@@ -6,7 +6,6 @@ describe CommentsController, type: :controller do
 
   before(:each) do |test|
     create(:article)
-    #create(:comment)
   end
 
   context "POST #create" do

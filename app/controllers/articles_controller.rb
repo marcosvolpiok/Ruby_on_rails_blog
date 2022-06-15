@@ -13,6 +13,10 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def show
+      @article = Article.find(params[:id])
+    end
+
     def delete
       article = Article.find(params[:id])
       article.destroy

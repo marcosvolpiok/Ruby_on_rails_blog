@@ -6,6 +6,7 @@ describe ArticlesController, type: :controller do
   # let(:comment) { article }
   let(:params) { {} }
   let(:params_create) { {article: {title: "Title 2", body: "Body 2"}} }
+  let(:params_update) { {article: {title: "Title 3", body: "Body 3"}, id: Article.first.id} }
 
   
 
@@ -30,9 +31,18 @@ describe ArticlesController, type: :controller do
   context "POST create" do
     it "add article" do
       get :create, params: params_create
-      expect(Article.count).to be_equal(2)
+      expect(Article.where(title: params_create[:article][:title]).count).to be_equal(1)
     end
   end
+
+  context "POST update" do
+    it "add article" do
+      get :update, params: params_update
+      expect(Article.where(title: params_update[:article][:title]).count).to be_equal(1)
+    end
+  end
+
+  
   
 end
 

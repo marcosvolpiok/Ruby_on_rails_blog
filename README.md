@@ -22,8 +22,8 @@ Run server
 
 Admin
 ------------
-To admin the blog enter in: http://localhost/admin
+To admin the blog entry at http://localhost/admin
 
 Visit the blog
 ------------
-To visit the blog entr in: http://localhost/blog
+To visit the blog entry at http://localhost/blog

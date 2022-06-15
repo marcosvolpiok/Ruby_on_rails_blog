@@ -1,4 +1,4 @@
-= form_with(model: @article, local: true, url: '/admin/articles') do |form|
+= form_with(model: @article, local: true, url: '/admin/articles/'+@article.id) do |form|
   = form.text_field :title, class: "form-control-static", placeholder: "Title"
   br 
   = form.text_area :body, class: "form-control-static", placeholder: "Body"

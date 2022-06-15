@@ -10,6 +10,8 @@ Rails.application.routes.draw do
         root to: 'articles#index_admin' 
         #get 'delete/:id' => 'articles#delete'
         get ':id/delete' => 'articles#delete'
+        patch '/' => 'articles#update'
+        
         
       end
     end

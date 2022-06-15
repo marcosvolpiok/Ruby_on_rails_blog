@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 describe ArticlesController, type: :controller do
-  # article = create(:article)
-  # let!(:article)
-  # let(:comment) { article }
   let(:params) { {} }
   let(:params_create) { {article: {title: "Title 2", body: "Body 2"}} }
-  let(:params_update) { {article: {title: "Title 3", body: "Body 3"}, id: Article.first.id} }
+  let(:params_update) { {article: {title: "Title 3", body: "Body 3"}} }
+  let(:params_article_to_be_deleted) { {article: {title: "Title 4", body: "Body 4"}} }
 
   
 
@@ -36,12 +34,21 @@ describe ArticlesController, type: :controller do
   end
 
   context "POST update" do
-    it "add article" do
+    it "update article" do
       get :update, params: params_update
       expect(Article.where(title: params_update[:article][:title]).count).to be_equal(1)
     end
   end
 
+  context "POST delete" do
+    it "delete article" do
+      get :create, params: params_article_to_be_delete
+      get :delete, params: {id: Article.last.id}
+      expect(Article.where(title: params_article_to_be_delete[:article][:title]).count).to be_equal(0)
+    end
+  end
+
+  
   
   
 end

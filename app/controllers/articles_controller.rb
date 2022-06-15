@@ -29,24 +29,18 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        uid = SecureRandom.hex(10)
-
         @article = Article.new
         @article.title = article_params[:title]
         @article.body = article_params[:body]
-        @article.id = uid
         @article.save!
 
         redirect_to '/admin/articles/'
     end    
 
     def update
-      uid = SecureRandom.hex(10)
-
       @article = Article.find(params[:id])
       @article.title = article_params[:title]
       @article.body = article_params[:body]
-      @article.id = uid
       @article.save!
 
       redirect_to '/admin/articles/'

@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_14_200909) do
-# Could not dump table "articles" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_213054) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-# Could not dump table "clients" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  create_table "articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+  end
+
+  create_table "comments", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.string "email"
+    t.string "body"
+    t.uuid "article_id"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+  end
 
 end

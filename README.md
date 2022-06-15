@@ -1,24 +1,29 @@
-# README
+Blog
+=========
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Requirements
+------------
+You need to have installed Postgres and Ruby 7.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+Installation
+------------
 
-* Configuration
+First, configure Postgres user and password in .env file
+Second, run:
 
-* Database creation
+    bin/rails db:migrate:status
+    bin/rails db:migrate
 
-* Database initialization
+Run server
+------------
+    bundle exec foreman start -p 3000
 
-* How to run the test suite
+Admin
+------------
+To admin the blog enter in: http://localhost/admin
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Visit the blog
+------------
+To visit the blog entr in: http://localhost/blog

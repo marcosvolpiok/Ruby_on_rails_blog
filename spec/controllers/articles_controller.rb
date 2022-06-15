@@ -18,5 +18,14 @@ describe ArticlesController, type: :controller do
       expect(assigns(:articles).size).to be_equal(1)
     end
   end
+
+  context "GET admin/index" do
+    it "show articles" do
+      get :index_admin, params: params
+      expect(assigns(:articles).size).to be_equal(1)
+    end
+  end
+
+  
 end
 

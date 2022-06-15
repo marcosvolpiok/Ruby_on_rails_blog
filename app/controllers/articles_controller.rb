@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
 
     def show
       @article = Article.find(params[:id])
+      @comments = Comment.where(article_id: params[:id])
+      @comment = Comment.new
     end
 
     def delete

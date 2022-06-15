@@ -48,7 +48,14 @@ describe ArticlesController, type: :controller do
     end
   end
 
-  
+  context "POST delete" do
+    it "delete article" do
+      get :create, params: params_create
+      get :show, params: { id: Article.first.id }
+      expect(assigns(:article).title).to be_in(params_create[:article][:title])
+    end
+  end
+
   
   
 end

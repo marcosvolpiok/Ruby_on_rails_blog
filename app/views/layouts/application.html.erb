@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlackList</title>
+    <title>My Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,13 +17,7 @@
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">BlackList</a>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar por teléfono" aria-label="Search">
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">My Blog</a>
     </nav>  
 
 
@@ -33,21 +27,15 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="/clients/">
+                <a class="nav-link" href="/">
                   <span data-feather="home"></span>
-                  Listado
+                  Go to Blog
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/clients/new">
+                <a class="nav-link" href="/admin/articles">
                   <span data-feather="file"></span>
-                  Nuevo
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/clients/search">
-                  <span data-feather="search"></span>
-                  Buscar
+                  Go to Admin
                 </a>
               </li>
             </ul>

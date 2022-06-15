@@ -1,3 +1,3 @@
 class Article < ApplicationRecord
-  has_many :comments, inverse_of: :article
+  has_many :comments
 end

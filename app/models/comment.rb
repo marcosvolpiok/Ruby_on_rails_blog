@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :article, inverse_of: :articles
+  belongs_to :article
 end
